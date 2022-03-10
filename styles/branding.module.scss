@@ -1,0 +1,33 @@
+// Typography
+@font-face {
+  font-family: Rapscall;
+  src: url("../assets/RAPSCALL.TTF");
+}
+
+@font-face {
+  font-family: Permanent Marker;
+  src: url("../assets/PermanentMarker-Regular.ttf");
+}
+
+@font-face {
+  font-family: Abel;
+  src: url("../assets/Abel-Regular.ttf");
+}
+
+@mixin brandingFont($size) {
+  font-family: "Rapscall", "Helvetica", sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-size: $size;
+}
+
+@mixin headerFont() {
+  font-family: "Permanent Marker", "Helvetica", sans-serif;
+  letter-spacing: 1px;
+}
+
+$defaultFont: Abel;
+
+// Font Colors
+$black: #000;
+$white: #fcfcfc;

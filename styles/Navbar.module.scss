@@ -1,0 +1,141 @@
+@import "branding.module.scss";
+
+@media only screen and (min-width: 100px) {
+  .navigation {
+    width: 100%;
+    background-color: $black;
+    min-height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    z-index: 100;
+    .branding {
+      cursor: pointer;
+      h1 {
+        display: none;
+      }
+      img {
+        height: 6vh;
+        width: auto;
+      }
+    }
+    .burger {
+      position: absolute;
+      right: 5vw;
+      .burger1,
+      .burger2,
+      .burger3 {
+        width: 30px;
+        background-color: $white;
+        height: 3px;
+        margin: 5px 0;
+        transition: all 0.25s ease;
+      }
+    }
+    .burgerActive {
+      .burger1 {
+        transform: rotate(45deg) translate(5px, 6px);
+        background-color: red;
+      }
+      .burger2 {
+        opacity: 0;
+      }
+      .burger3 {
+        transform: rotate(-45deg) translate(5px, -6px);
+        background-color: red;
+      }
+    }
+    nav {
+      position: absolute;
+      left: 0;
+      top: 8vh;
+      transition: transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      padding: 3vh 0vw 5vh 10vw;
+      background-color: $black;
+      min-width: 70%;
+      z-index: 10;
+      transform: translateX(-100%);
+      a {
+        max-width: 80%;
+        margin: 1.5vh 0;
+        color: $white;
+        text-decoration: none;
+        @include headerFont;
+        font-size: 1.25rem;
+        transition: color 0.5s ease;
+      }
+      a:hover {
+        color: blue;
+      }
+    }
+    .navActive {
+      left: 0;
+      transform: translateX(0%);
+    }
+  }
+}
+
+@media only screen and (min-width: 300px) {
+  .navigation {
+    .burger {
+      .burger1,
+      .burger2,
+      .burger3 {
+        width: 35px;
+      }
+    }
+    nav {
+      a {
+        @include headerFont;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navigation {
+    nav {
+      min-width: 50%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  .navigation {
+    justify-content: space-between;
+    .branding {
+      display: flex;
+      align-items: flex-end;
+      margin-left: 2vw;
+      h1 {
+        display: block;
+        color: $white;
+        @include brandingFont(2rem);
+        margin-left: 0.5vw;
+      }
+    }
+    .burger {
+      display: none;
+    }
+    nav {
+      position: static;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0vh 0vw 0vh 0vw;
+      background-color: $black;
+      min-width: 40%;
+      z-index: 10;
+      transform: translateX(0%);
+      a {
+        font-size: 1.25rem;
+        margin: 0 0;
+        padding: 0 1.25rem;
+        transition: color 0.5s ease;
+      }
+    }
+  }
+}
