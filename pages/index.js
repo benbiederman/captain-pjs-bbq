@@ -3,13 +3,13 @@ import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <Head>
         <title>Captain PJ's BBQ</title>
         <meta name="description" content="#" />
         <link rel="icon" href="#" />
       </Head>
       <main></main>
-    </div>
+    </main>
   );
 }
